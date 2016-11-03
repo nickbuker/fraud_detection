@@ -1,14 +1,12 @@
 import pandas as pd
 import cPickle as pickle
-from sklearn.cross_validation import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import GradientBoostingClassifier
 
 
 class GBCModel(object):
 
-    def __init__(self, json_data):
-        self.json_data = json_data
+    def __init__(self):
 
     def _make_df(self, json_data, d_type='train'):
         self.num_df = pd.read_json(json_data)
@@ -41,8 +39,8 @@ class GBCModel(object):
         else:
             # Create is_fraud (y) colmun
             self.num_df['is_fraud'] = ((self.num_df['acct_type'] == 'fraudster') |
-                                      (self.num_df['acct_type'] == 'fraudster_event') |
-                                      (self.num_df['acct_type'] == 'fraudster_att')).astype(int)
+                                       (self.num_df['acct_type'] == 'fraudster_event') |
+                                       (self.num_df['acct_type'] == 'fraudster_att')).astype(int)
             # Drop columns that are no longer needed and fill NaN's with zero
             self.num_df.drop(['acct_type', 'listed', 'payout_type'], axis=1, inplace=True)
             self.num_df = self.num_df.fillna(value=0)
@@ -58,12 +56,14 @@ class GBCModel(object):
         return self.X_train, self.y_train
 
     def _fit_GBC(self):
+        # Create gradient boosting classifier and fit it to training data
         self._boosting = GradientBoostingClassifier(learning_rate=0.001, max_depth=6,
                                                     max_features=9, subsample=0.9,
                                                     loss='deviance', n_estimators=10000)
         self._boosting.fit(self.X_train, self.y_train)
 
-    def fit(self):
+    def fit(self, json_data):
+        self.json_data = json_data
         # Process the trainging data and fit the GBC model
         self._make_df(self.json_data)
         self._make_train_Xy()
@@ -83,7 +83,8 @@ class GBCModel(object):
 
 
 if __name__ == '__main__':
-    model = GBCModel('./data/data.json')
-    model.fit()
+    model = GBCModel()
+    model.fit('./data/data.json')
+    # Save fitted model as pickle
     with open('model.pkl', 'w') as f:
         pickle.dump(model, f)
