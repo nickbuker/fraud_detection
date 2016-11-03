@@ -1,6 +1,6 @@
 # Fraud Detection Case Study
 
-Gradient Boosting Classifier Class that is pickled once fitted.
+Gradient Boosting Classifier Class that is pickled for reuse once fitted.
 
 ```python
 import pandas as pd
