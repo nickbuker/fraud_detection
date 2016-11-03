@@ -1,9 +1,9 @@
 # Fraud Detection Case Study
 
-<img src="images/fraud_roc.png" width="800">
+<img src="images/fraud_roc.png" width="600">
 #### Figure 1: Fraud ROC curve for gradient boosted classifier.
 <br>
-<img src="images/fraud_roc_cropped.png" width="800">
+<img src="images/fraud_roc_cropped.png" width="600">
 #### Figure 2: Fraud ROC curve cropped for clear detail.
 <br>
 #### Gradient Boosting Classifier Class that is pickled for reuse once fitted.
