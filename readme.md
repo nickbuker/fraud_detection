@@ -1,6 +1,12 @@
 # Fraud Detection Case Study
 
-Gradient Boosting Classifier Class that is pickled for reuse once fitted.
+<img src="images/fraud_roc.png" width="800">
+#### Figure 1: Fraud ROC curve for gradient boosted classifier.
+<br>
+<img src="images/fraud_roc_cropped.png" width="800">
+#### Figure 2: Fraud ROC curve cropped for clear detail.
+<br>
+#### Gradient Boosting Classifier Class that is pickled for reuse once fitted.
 
 ```python
 import pandas as pd
@@ -96,7 +102,7 @@ if __name__ == '__main__':
 
 ```
 
-Risk-scoring algorithm that considers probability of fraud and log of gross sales. The model prioritizes investigating cases with high risk and high potential cost.
+#### Risk-scoring algorithm that considers probability of fraud and log of gross sales. The model prioritizes investigating cases with high risk and high potential cost.
 
 ```python
 import numpy as np
@@ -112,7 +118,7 @@ def risk_score(proba, gross_sales):
    return proba * log_gs
   ```
 
-Function for scoring models while grid-searching.
+#### Function for scoring models while grid-searching.
 
 ```python
 from sklearn.metrics import confusion_matrix, log_loss
