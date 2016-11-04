@@ -132,3 +132,9 @@ def grid_score(y, y_pred, y_pred_proba):
     lg_loss = log_loss(y, y_pred_proba)
     return FNR, FPR, lg_loss
 ```
+
+<img src="images/logos/python.png" width="120">
+<img src="images/logos/atom.png" width="120">
+<img src="images/logos/sklearn.png" width="120">
+<img src="images/logos/matplotlib.png" width="120">
+<img src="images/logos/linux.png" width="120">
