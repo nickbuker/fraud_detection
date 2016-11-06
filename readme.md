@@ -1,10 +1,22 @@
 # Fraud Detection Case Study
 
+
+##### Triage table for investigation of potential fraud. Contains redacted organization name, predicted probability of fraud, gross sales, and risk score (risk scoring function near bottom of this document).
+
+| Triage Order | Redacted Name  | Probability of Fraud | Gross Sales | Risk Score |
+|--------------|----------------|----------------------|-------------|------------|
+| 1.           | Organization A | 0.893                | 356020      | 4.96       |
+| 2.           | Organization B | 0.952                | 125690      | 4.85       |
+| 3.           | Organization C | 0.789                | 256870      | 4.27       |
+| 4.           | Organization D | 0.801                | 163205      | 4.18       |
+| 5.           | Organization E | 0.693                | 568987      | 3.99       |
+<br>
 <img src="images/fraud_roc.png" width="600">
 #### Figure 1: Fraud ROC curve for gradient boosted classifier.
 <br>
+<br>
 <img src="images/fraud_roc_cropped.png" width="600">
-#### Figure 2: Fraud ROC curve cropped for clear detail.
+#### Figure 2: Fraud ROC curve cropped for clarity.
 <br>
 #### Gradient Boosting Classifier Class that is pickled for reuse once fitted.
 
@@ -132,7 +144,8 @@ def grid_score(y, y_pred, y_pred_proba):
     lg_loss = log_loss(y, y_pred_proba)
     return FNR, FPR, lg_loss
 ```
-
+<br>
+<br>
 <img src="images/logos/python.png" width="120">
 <img src="images/logos/atom.png" width="120">
 <img src="images/logos/sklearn.png" width="120">
