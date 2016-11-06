@@ -12,11 +12,11 @@
 | 5.           | Organization E | 0.693                | 568987      | 3.99       |
 <br>
 <img src="images/fraud_roc.png" width="600">
-#### Figure 1: Fraud ROC curve for gradient boosted classifier.
+#### Figure 1: Fraud Detection Model ROC curve for gradient boosted classifier.
 <br>
 <br>
 <img src="images/fraud_roc_cropped.png" width="600">
-#### Figure 2: Fraud ROC curve cropped for clarity.
+#### Figure 2: Fraud Detection Model ROC curve cropped for clarity.
 <br>
 #### Gradient Boosting Classifier Class that is pickled for reuse once fitted.
 
