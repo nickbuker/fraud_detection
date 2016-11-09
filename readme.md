@@ -114,7 +114,7 @@ if __name__ == '__main__':
 
 ```
 
-#### Risk-scoring algorithm that considers probability of fraud and log of gross sales. The model prioritizes investigating cases with high risk and high potential cost.
+#### Risk-scoring algorithm that considers probability of fraud as well as log of gross sales. The model prioritizes investigation of cases with high risk and high potential cost.
 
 ```python
 import numpy as np
