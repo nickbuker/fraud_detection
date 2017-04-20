@@ -12,13 +12,13 @@
 | 5.           | Organization E | 0.693                | 568987      | 3.99       |
 <br>
 <img src="images/fraud_roc.png" width="600">
-#### Figure 1: Fraud Detection Model ROC curve for gradient boosted classifier.
+<h4> Figure 1: Fraud Detection Model ROC curve for gradient boosted classifier. </h4>
 <br>
 <br>
 <img src="images/fraud_roc_cropped.png" width="600">
-#### Figure 2: Fraud Detection Model ROC curve cropped for clarity.
+<h4> Figure 2: Fraud Detection Model ROC curve cropped for clarity. </h4>
 <br>
-#### Gradient Boosting Classifier Class that is pickled for reuse once fitted.
+<h4> Gradient Boosting Classifier Class that is pickled for reuse once fitted. </h4>
 
 ```python
 import pandas as pd
@@ -114,7 +114,7 @@ if __name__ == '__main__':
 
 ```
 
-#### Risk-scoring algorithm that considers probability of fraud as well as log of gross sales. The model prioritizes investigation of cases with high risk and high potential cost.
+<h4> Risk-scoring algorithm that considers probability of fraud as well as log of gross sales. The model prioritizes investigation of cases with high risk and high potential cost. </h4>
 
 ```python
 import numpy as np
@@ -130,7 +130,7 @@ def risk_score(proba, gross_sales):
    return proba * log_gs
   ```
 
-#### Function for scoring models while grid-searching.
+<h4> Function for scoring models while grid-searching. </h4>
 
 ```python
 from sklearn.metrics import confusion_matrix, log_loss
@@ -144,10 +144,5 @@ def grid_score(y, y_pred, y_pred_proba):
     lg_loss = log_loss(y, y_pred_proba)
     return FNR, FPR, lg_loss
 ```
-<br>
-<br>
-<img src="images/logos/python.png" width="120">
-<img src="images/logos/atom.png" width="120">
-<img src="images/logos/sklearn.png" width="120">
-<img src="images/logos/matplotlib.png" width="120">
-<img src="images/logos/linux.png" width="120">
+
+<img src="images/logos/python.png" width="120"> <img src="images/logos/atom.png" width="120"> <img src="images/logos/sklearn.png" width="120"> <img src="images/logos/matplotlib.png" width="120"> <img src="images/logos/linux.png" width="120">
